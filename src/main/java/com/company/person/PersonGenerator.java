@@ -1,11 +1,11 @@
-package com.company.Person;
+package com.company.person;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.Random;
 
-import static com.company.Json.JsonFileReader.tokenToObject;
+import static com.company.json.JsonFileReader.tokenToObject;
 
 
 public class PersonGenerator {

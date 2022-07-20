@@ -1,6 +1,6 @@
 package com.company;
 
-import com.company.Person.PersonGenerator;
+import com.company.person.PersonGenerator;
 import org.json.JSONArray;
 import org.springframework.stereotype.Service;
 

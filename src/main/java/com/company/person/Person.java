@@ -1,6 +1,6 @@
-package com.company.Person;
+package com.company.person;
 
-import com.company.Location.Location;
+import com.company.location.Location;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 
 import java.util.Random;

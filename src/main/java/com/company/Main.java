@@ -1,12 +1,5 @@
 package com.company;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import static com.company.Json.JsonFileReader.tokenToObject;
-import static com.company.Person.PersonGenerator.*;
-import static com.company.PersonService.personEndpoint;
-
 public class Main {
 
     public static void main(String[] args) {

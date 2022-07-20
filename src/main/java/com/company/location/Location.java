@@ -1,9 +1,9 @@
-package com.company.Location;
+package com.company.location;
 
 public class Location {
     protected String type;
     protected String country;
-    protected randomGeoPosition geoPosition;
+    protected RandomGeoPosition geoPosition;
     protected int location_id;
     protected boolean inEurope;
     protected String countryCode;
@@ -19,7 +19,7 @@ public class Location {
         return country;
     }
 
-    public randomGeoPosition getGeo_position() {
+    public RandomGeoPosition getGeo_position() {
         return geoPosition;
     }
 

@@ -1,4 +1,4 @@
-package com.company.Json;
+package com.company.json;
 
 import java.io.InputStream;
 

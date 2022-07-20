@@ -1,15 +1,15 @@
-package com.company.Location;
+package com.company.location;
 
 import java.text.DecimalFormat;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class randomGeoPosition {
+public class RandomGeoPosition {
 
     private final double latitude ;
     private final double longitude;
 
 
-    public randomGeoPosition() {
+    public RandomGeoPosition() {
 
         double minLatitude = -90;
         double maxLatitude = 90;
