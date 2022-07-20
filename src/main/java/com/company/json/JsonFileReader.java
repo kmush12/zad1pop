@@ -6,15 +6,15 @@ import org.json.*;
 
 public class JsonFileReader {
 
-    public static JSONObject tokenToObject(){
+    public  JSONObject tokenToObject(){
         return new JSONObject(dataToJSONToken());
     }
 
-    private static JSONTokener dataToJSONToken() {
+    private  JSONTokener dataToJSONToken() {
         return new JSONTokener(convertFileNameToInputStream());
     }
 
-    private static InputStream convertFileNameToInputStream(){
+    private  InputStream convertFileNameToInputStream(){
         String fileName = "dane.json";
         InputStream inputStream = JsonFileReader.class.getResourceAsStream(fileName);
         if (inputStream == null) {

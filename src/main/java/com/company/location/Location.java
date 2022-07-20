@@ -10,7 +10,6 @@ public class Location {
     protected boolean coreCountry;
     protected String distance;
 
-
     public String getType() {
         return type;
     }
@@ -30,7 +29,6 @@ public class Location {
     public boolean isInEurope() {
         return inEurope;
     }
-
 
     public String getCountryCode() {
         return countryCode;

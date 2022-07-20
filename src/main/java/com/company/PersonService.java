@@ -7,11 +7,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class PersonService {
 
-    public static String personEndpoint(int size) {
-        JSONArray finaljson = new JSONArray();
+    public String personEndpoint(int size) {
+        JSONArray finalJson = new JSONArray();
+        PersonGenerator person = new PersonGenerator();
         for(int i=0; i<size; i++){
-            finaljson.put(PersonGenerator.InstanceOfPerson());
+            finalJson.put(person.InstanceOfPerson());
         }
-        return finaljson.toString();
+        return finalJson.toString();
     }
 }

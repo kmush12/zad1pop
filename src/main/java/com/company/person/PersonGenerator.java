@@ -1,19 +1,16 @@
 package com.company.person;
 
+import com.company.json.JsonFileReader;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 import java.util.Random;
-
-import static com.company.json.JsonFileReader.tokenToObject;
-
 
 public class PersonGenerator {
 
 
     public static Random rand = new Random();
 
-    public static JSONObject InstanceOfPerson() {
+    public JSONObject InstanceOfPerson() {
          int location_id = CountryInfoObject().getInt("location_id");
          boolean inEurope = CountryInfoObject().getBoolean("inEurope");
          String countryCode = CountryInfoObject().getString("countryCode");
@@ -23,32 +20,33 @@ public class PersonGenerator {
          return new JSONObject(person);
     }
 
-    public static String getRandomNameAndConvertToString() {
+    private String getRandomNameAndConvertToString() {
         int nameNumber = rand.nextInt(getAllNamesFromDataObject().length());
         JSONObject randomNameObject = getAllNamesFromDataObject().getJSONObject(nameNumber);
         return randomNameObject.get("name").toString();
     }
 
-    private static JSONObject CountryInfoObject() {
+    private JSONObject CountryInfoObject() {
         return getRandomCountryObject().getJSONObject("info");
     }
 
-    public static String CountryName() {
+    public String CountryName() {
         return getRandomCountryObject().getString("country");
     }
 
 
-    private static JSONObject getRandomCountryObject() {
+    private JSONObject getRandomCountryObject() {
         int countryNumber = rand.nextInt(getAllCountriesFromDataObject().length());
         return getAllCountriesFromDataObject().getJSONObject(countryNumber);
     }
 
-    public static JSONArray getAllNamesFromDataObject() {
-        return tokenToObject().getJSONArray("names");
+    private JSONArray getAllNamesFromDataObject() {
+        return jsonFileReader.tokenToObject().getJSONArray("names");
     }
 
-    public static JSONArray getAllCountriesFromDataObject() {
-        return tokenToObject().getJSONArray("countries");
+    private JSONArray getAllCountriesFromDataObject() {
+        return jsonFileReader.tokenToObject().getJSONArray("countries");
     }
 
+    private final JsonFileReader jsonFileReader = new JsonFileReader();
 }

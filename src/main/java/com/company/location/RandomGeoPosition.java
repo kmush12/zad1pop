@@ -13,17 +13,17 @@ public class RandomGeoPosition {
 
         double minLatitude = -90;
         double maxLatitude = 90;
-        this.latitude = formatCoordinates(minLatitude, maxLatitude);
+        this.latitude = coordinatesFormat(minLatitude, maxLatitude);
         double minLongitude = 0;
         double maxLongitude = 180;
-        this.longitude = formatCoordinates(minLongitude, maxLongitude);
+        this.longitude = coordinatesFormat(minLongitude, maxLongitude);
+    }
+
+    private double coordinatesFormat(double minCoordinates, double maxCoordinates) {
+        return Double.parseDouble(geoCoordinatesFormat.format(randomCoordinates(minCoordinates, maxCoordinates)));
     }
 
     private final DecimalFormat geoCoordinatesFormat = new DecimalFormat("##.#######");
-
-    private double formatCoordinates(double minCoordinates, double maxCoordinates) {
-        return Double.parseDouble(geoCoordinatesFormat.format(randomCoordinates(minCoordinates, maxCoordinates)));
-    }
 
     private double randomCoordinates(double minCoordinates, double maxCoordinates) {
         return ThreadLocalRandom.current().nextDouble((minCoordinates), (maxCoordinates +1));
